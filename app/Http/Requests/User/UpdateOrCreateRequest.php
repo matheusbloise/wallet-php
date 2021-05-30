@@ -3,7 +3,6 @@
 namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 use App\Models\User;
 
 class UpdateOrCreateRequest extends FormRequest
@@ -21,12 +20,11 @@ class UpdateOrCreateRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @param Request $request
      * @return array
      */
-    public function rules(Request $request)
+    public function rules()
     {
-        $noRequiredOnUpdate = isset($request->id) ? $request->id : 'null';
+        $noRequiredOnUpdate = isset($this->id) ? $this->id : 'null';
 
         return [
             'email' => [

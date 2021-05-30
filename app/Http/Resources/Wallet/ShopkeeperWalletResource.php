@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\Wallet;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class ShopkeeperWalletResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,9 +17,8 @@ class UserResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->full_name,
-            'email' => $this->email,
-            'document' => $this->cpf_cnpj,
+            'shopkeeper_id' => $this->shopkeeper_id,
+            'balance' => $this->balance,
         ];
     }
 }

@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\FinancialOperationWalletController;
+use App\Http\Controllers\CustomerWalletController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FinancialOperationWalletController;
+use App\Http\Controllers\ShopkeeperWalletController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ShopkeeperController;
 
@@ -22,6 +24,7 @@ Route::group(['prefix' => 'customer'], function() {
     Route::post('', [CustomerController::class, 'store']);
     Route::put('{id}', [CustomerController::class, 'update']);
     Route::delete('{id}', [CustomerController::class, 'destroy']);
+    Route::post('wallet', [CustomerWalletController::class, 'store']);
 });
 
 Route::group(['prefix' => 'shopkeeper'], function() {
@@ -30,8 +33,9 @@ Route::group(['prefix' => 'shopkeeper'], function() {
     Route::post('', [ShopkeeperController::class, 'store']);
     Route::put('{id}', [ShopkeeperController::class, 'update']);
     Route::delete('{id}', [ShopkeeperController::class, 'destroy']);
+    Route::post('wallet', [ShopkeeperWalletController::class, 'store']);
 });
 
-Route::group(['prefix' => 'wallet'], function() {
+Route::group(['prefix' => 'operation'], function() {
     Route::post('/transfer', [FinancialOperationWalletController::class, 'transfer']);
 });

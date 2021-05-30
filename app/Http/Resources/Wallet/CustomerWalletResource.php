@@ -1,25 +1,24 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\Wallet;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class CustomerWalletResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
      *
-     * @param  Request $request
+     * @param  Request  $request
      * @return array
      */
     public function toArray($request)
     {
         return [
             'id' => $this->id,
-            'name' => $this->full_name,
-            'email' => $this->email,
-            'document' => $this->cpf_cnpj,
+            'customer_id' => $this->customer_id,
+            'balance' => $this->balance,
         ];
     }
 }

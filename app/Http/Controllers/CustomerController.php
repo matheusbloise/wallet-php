@@ -10,6 +10,12 @@ use App\Http\Requests\User\UpdateOrCreateRequest;
 use App\Http\Resources\User\UserResource;
 use App\Services\CustomerService;
 
+/**
+ * Class CustomerController
+ *
+ * @group Customer
+ * @package App\Http\Controllers
+ */
 class CustomerController extends Controller
 {
     /**

@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Http\Requests\FinancialOperationWallet\TransferRequest;
 use App\Services\FinancialOperationWalletService;
+use Illuminate\Http\JsonResponse;
 
-
+/**
+ * Class FinancialOperationWalletController
+ *
+ * @group Financial Operation Wallet
+ * @package App\Http\Controllers
+ */
 class FinancialOperationWalletController extends Controller
 {
     /**
@@ -23,6 +29,10 @@ class FinancialOperationWalletController extends Controller
         $this->financialOperationWalletService = $financialOperationWalletService;
     }
 
+    /**
+     * @param TransferRequest $request
+     * @return JsonResponse
+     */
     public function transfer(TransferRequest $request)
     {
         try {

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use App\Models\User;
 use App\Repositories\UserRepository;
 
-class UserService
+abstract class UserService
 {
     /**
      * @var UserRepository $userRepository

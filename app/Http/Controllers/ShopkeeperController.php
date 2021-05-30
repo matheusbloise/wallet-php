@@ -10,6 +10,12 @@ use App\Http\Requests\User\FindPaginatedRequest;
 use App\Http\Requests\User\UpdateOrCreateRequest;
 use App\Http\Resources\User\UserResource;
 
+/**
+ * Class ShopkeeperController
+ *
+ * @group Shopkeeper
+ * @package App\Http\Controllers
+ */
 class ShopkeeperController extends Controller
 {
     /**
