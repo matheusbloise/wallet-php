@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-abstract class Wallet extends Model
+class Wallet extends Model
 {
     use HasFactory, SoftDeletes;
 

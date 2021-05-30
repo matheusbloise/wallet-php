@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FinancialOperationWallet extends Model
@@ -22,11 +24,17 @@ class FinancialOperationWallet extends Model
         'balance_payee',
     ];
 
-    public function payable() {
+    /**
+     * @return MorphTo
+     */
+    public function payable(): MorphTo {
         return $this->morphTo();
     }
 
-    public function payer()
+    /**
+     * @return BelongsTo
+     */
+    public function payer(): BelongsTo
     {
         return $this->belongsTo(CustomerWallet::class);
     }

@@ -6,7 +6,7 @@ namespace App\Services;
 use App\Models\Wallet;
 use App\Repositories\WalletRepository;
 
-abstract class WalletService
+class WalletService
 {
     /**
      * @var Wallet $wallet
